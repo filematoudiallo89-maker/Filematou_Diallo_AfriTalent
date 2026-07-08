@@ -115,3 +115,37 @@
     .category-card { margin-bottom: 1rem; }
     footer .row > div { margin-bottom: 1.5rem; }
 }
+/* Dark mode (via attribut data-bs-theme) */
+[data-bs-theme="dark"] {
+    --bg-light: #1a1a2e;
+    --text-dark: #e0e0e0;
+    --text-light: #ffffff;
+}
+[data-bs-theme="dark"] body {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+[data-bs-theme="dark"] .navbar {
+    background-color: #16213e !important;
+}
+[data-bs-theme="dark"] .nav-link {
+    color: #e0e0e0 !important;
+}
+
+/* Navbar scrolled */
+.navbar-scrolled {
+    background-color: rgba(255,255,255,0.98) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+[data-bs-theme="dark"] .navbar-scrolled {
+    background-color: #0f3460 !important;
+}
+
+/* Back to top */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 999;
+}
