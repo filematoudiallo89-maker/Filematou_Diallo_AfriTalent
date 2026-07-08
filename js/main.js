@@ -31,3 +31,36 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+// ===== COMPTEURS ANIMÉS =====
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = parseInt(entry.target.dataset.target);
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    entry.target.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    entry.target.textContent = Math.floor(current);
+                }
+            }, 20);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+counters.forEach(counter => counterObserver.observe(counter));
+
+// ===== FADE-IN SECTIONS =====
+const fadeElements = document.querySelectorAll('.fade-section');
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-visible');
+        }
+    });
+}, { threshold: 0.2 });
+fadeElements.forEach(el => fadeObserver.observe(el));
