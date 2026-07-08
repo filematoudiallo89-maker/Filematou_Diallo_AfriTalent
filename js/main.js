@@ -64,3 +64,22 @@ const fadeObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.2 });
 fadeElements.forEach(el => fadeObserver.observe(el));
+// ===== FILTRAGE FREELANCES =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+const freelanceCards = document.querySelectorAll('.freelance-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        freelanceCards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        // Gestion active des boutons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});

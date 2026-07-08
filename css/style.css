@@ -158,3 +158,82 @@
     opacity: 1;
     transform: translateY(0);
 }
+// ===== VALIDATION FORMULAIRE =====
+const form = document.getElementById('contact-form');
+const nom = document.getElementById('nom');
+const prenom = document.getElementById('prenom');
+const email = document.getElementById('email');
+const sujet = document.getElementById('sujet');
+const message = document.getElementById('message');
+const successMsg = document.getElementById('success-message');
+
+// Fonction d'affichage d'erreur (définie avant utilisation)
+function showError(input, msg) {
+    input.classList.add('is-invalid');
+    const errorEl = document.getElementById(input.id + '-error');
+    if (errorEl) errorEl.textContent = msg;
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    // Réinitialisation des messages et des classes (inclut form-select)
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    document.querySelectorAll('.form-control, .form-select')
+        .forEach(el => el.classList.remove('is-invalid', 'is-valid'));
+    successMsg.style.display = 'none'; // cacher le message de succès précédent
+
+    // Validation Nom
+    if (!nom.value.trim()) {
+        showError(nom, 'Le nom est requis.');
+        isValid = false;
+    } else {
+        nom.classList.add('is-valid');
+    }
+
+    // Validation Prénom
+    if (!prenom.value.trim()) {
+        showError(prenom, 'Le prénom est requis.');
+        isValid = false;
+    } else {
+        prenom.classList.add('is-valid');
+    }
+
+    // Validation Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value.trim() || !emailRegex.test(email.value)) {
+        showError(email, 'Veuillez entrer un email valide.');
+        isValid = false;
+    } else {
+        email.classList.add('is-valid');
+    }
+
+    // Validation Sujet
+    if (!sujet.value) {
+        showError(sujet, 'Veuillez sélectionner un sujet.');
+        isValid = false;
+    } else {
+        sujet.classList.add('is-valid');
+    }
+
+    // Validation Message (min 20 caractères)
+    if (message.value.trim().length < 20) {
+        showError(message, 'Le message doit contenir au moins 20 caractères.');
+        isValid = false;
+    } else {
+        message.classList.add('is-valid');
+    }
+
+    if (isValid) {
+        successMsg.style.display = 'block';
+        form.reset();
+        // Retirer les classes de validation après réinitialisation
+        document.querySelectorAll('.form-control, .form-select')
+            .forEach(el => el.classList.remove('is-valid'));
+        // (Optionnel) masquer après 5 secondes
+        setTimeout(() => {
+            successMsg.style.display = 'none';
+        }, 5000);
+    }
+});
