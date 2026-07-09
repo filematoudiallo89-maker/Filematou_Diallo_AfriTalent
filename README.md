@@ -26,7 +26,7 @@ Il a été conçu dans le cadre du projet de fin de semestre 2, en suivant les t
 - Année dynamique dans le copyright du footer
 
 ## Captures d’écran
-![Accueil](./screenshots/accueil.png)
+![Accueil](./screenshots/accueil.png)ta
 ![Freelances](./screenshots/freelances.png)
 ![Tarifs](./screenshots/tarifs.png)
 ![À propos](./screenshots/about.png)
