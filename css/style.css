@@ -1,15 +1,109 @@
+/* ===== VARIABLES CSS (thème vert/blanc) ===== */
+:root {
+    --primary-color: #2e7d32;       /* Vert foncé */
+    --primary-light: #4caf50;       /* Vert moyen */
+    --primary-lighter: #81c784;     /* Vert clair */
+    --primary-dark: #1b5e20;        /* Vert très foncé */
+    --secondary-color: #6c757d;     /* Gris */
+    --accent-color: #ff6b35;        /* Orange (pour contraste) */
+    --bg-light: #f8f9fa;            /* Fond clair */
+    --bg-white: #ffffff;            /* Blanc pur */
+    --text-dark: #212529;           /* Texte sombre */
+    --text-light: #ffffff;          /* Texte blanc */
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --shadow-nav: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --border-radius: 12px;
+    --card-bg: #ffffff;
+    --body-bg: #f8f9fa;
+    --text-muted: #6c757d;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--body-bg);
+    padding-top: 70px; /* pour la navbar fixe */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    box-shadow: var(--shadow-nav);
+    transition: all 0.3s ease;
+}
+.navbar-brand {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color) !important;
+}
+.nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    transition: color 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 /* ===== HERO ===== */
 #hero {
     display: flex;
     align-items: center;
-    min-height: 80vh;
-    background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+    min-height: 70vh;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: 3rem 0;
 }
 #hero h1 {
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: -1px;
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 #hero h2 {
     font-size: 1.8rem;
@@ -17,12 +111,24 @@
     color: var(--secondary-color);
 }
 .hero-image {
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     transform: rotate(2deg);
+    transition: transform 0.3s ease;
+}
+.hero-image:hover {
+    transform: rotate(0deg);
+}
+.stats .counter {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.stats p {
+    margin-top: 0.25rem;
+    font-weight: 500;
 }
 
-/* ===== BENTO GRID (Comment ça marche) ===== */
+/* ===== BENTO GRID ===== */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -30,10 +136,10 @@
     gap: 1.5rem;
 }
 .bento-card {
-    background: white;
-    border-radius: 20px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
     padding: 2rem 1.5rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -43,7 +149,16 @@
 }
 .bento-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.bento-card .step-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    opacity: 0.5;
+}
+.bento-card i {
+    color: var(--primary-color);
 }
 .bento-card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
 .bento-card:nth-child(2) { grid-column: span 1; grid-row: span 1; }
@@ -52,17 +167,18 @@
 
 /* ===== CATÉGORIES ===== */
 .category-card {
-    background: white;
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
     padding: 1.5rem;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    height: 100%;
 }
 .category-card:hover {
     transform: scale(1.03) translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
     border-color: var(--primary-color);
 }
 .category-card i {
@@ -73,23 +189,167 @@
 .category-card h5 {
     font-weight: 600;
 }
+.category-card p {
+    color: var(--text-muted);
+}
 
-/* ===== CAROUSELL ===== */
+/* ===== CAROUSEL TÉMOIGNAGES ===== */
 .carousel-item {
     padding: 2rem 0;
 }
 .testimonial-card {
-    background: white;
-    border-radius: 16px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
     padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 .testimonial-card .stars {
     color: #f5b342;
 }
-/* ===== MEDIA QUERIES ===== */
 
-/* Tablette (≥768px) */
+/* ===== CTA ===== */
+#cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+/* ===== BACK TO TOP ===== */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 999;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    line-height: 50px;
+    text-align: center;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+#back-to-top:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* ===== FADE-IN SECTIONS ===== */
+.fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== DARK MODE (adapté au vert) ===== */
+[data-bs-theme="dark"] {
+    --bg-light: #1a2a1a;
+    --body-bg: #121212;
+    --card-bg: #1e2a1e;
+    --text-dark: #e0e0e0;
+    --text-muted: #a0b0a0;
+    --primary-color: #66bb6a;
+    --primary-dark: #388e3c;
+    --primary-light: #81c784;
+    --shadow-nav: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+[data-bs-theme="dark"] body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+[data-bs-theme="dark"] .navbar {
+    background-color: #1a2a1a !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+[data-bs-theme="dark"] .nav-link {
+    color: #e0e0e0 !important;
+}
+[data-bs-theme="dark"] .nav-link:hover,
+[data-bs-theme="dark"] .nav-link.active {
+    color: var(--primary-light) !important;
+}
+[data-bs-theme="dark"] #hero {
+    background: linear-gradient(135deg, #1a2a1a, #0d1a0d);
+}
+[data-bs-theme="dark"] .bento-card,
+[data-bs-theme="dark"] .category-card,
+[data-bs-theme="dark"] .testimonial-card,
+[data-bs-theme="dark"] .card {
+    background: #1e2a1e;
+    color: #e0e0e0;
+    border-color: #2a3a2a;
+}
+[data-bs-theme="dark"] .bg-light {
+    background-color: #1a2a1a !important;
+}
+[data-bs-theme="dark"] .text-muted {
+    color: #a0b0a0 !important;
+}
+[data-bs-theme="dark"] .btn-outline-primary {
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+[data-bs-theme="dark"] .btn-outline-primary:hover {
+    background-color: var(--primary-light);
+    color: #121212;
+}
+[data-bs-theme="dark"] .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+[data-bs-theme="dark"] .btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+[data-bs-theme="dark"] #cta {
+    background: linear-gradient(135deg, #1b5e20, #0d3b0d);
+}
+
+/* ===== NAVBAR SCROLLED ===== */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+[data-bs-theme="dark"] .navbar-scrolled {
+    background-color: #0d1a0d !important;
+}
+
+/* ===== FORMULAIRE DE CONTACT ===== */
+.error-message {
+    min-height: 1.5rem;
+}
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+.is-valid {
+    border-color: var(--primary-color) !important;
+}
+
+/* ===== CARTES TARIFS ===== */
+.recommended {
+    border: 2px solid var(--primary-color) !important;
+    box-shadow: 0 10px 30px rgba(46, 125, 50, 0.2);
+}
+.card-header.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--primary-dark) !important;
+}
+footer a.text-white-50 {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+footer a.text-white-50:hover {
+    color: #fff !important;
+}
+
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 991.98px) {
     #hero h1 { font-size: 2.8rem; }
     #hero h2 { font-size: 1.4rem; }
@@ -100,7 +360,6 @@
     .bento-card:nth-child(4) { grid-column: span 2; }
 }
 
-/* Mobile (≤575px) */
 @media (max-width: 575.98px) {
     #hero h1 { font-size: 2rem; }
     #hero h2 { font-size: 1.2rem; }
@@ -115,125 +374,3 @@
     .category-card { margin-bottom: 1rem; }
     footer .row > div { margin-bottom: 1.5rem; }
 }
-/* Dark mode (via attribut data-bs-theme) */
-[data-bs-theme="dark"] {
-    --bg-light: #1a1a2e;
-    --text-dark: #e0e0e0;
-    --text-light: #ffffff;
-}
-[data-bs-theme="dark"] body {
-    background-color: #1a1a2e;
-    color: #e0e0e0;
-}
-[data-bs-theme="dark"] .navbar {
-    background-color: #16213e !important;
-}
-[data-bs-theme="dark"] .nav-link {
-    color: #e0e0e0 !important;
-}
-
-/* Navbar scrolled */
-.navbar-scrolled {
-    background-color: rgba(255,255,255,0.98) !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-[data-bs-theme="dark"] .navbar-scrolled {
-    background-color: #0f3460 !important;
-}
-
-/* Back to top */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    z-index: 999;
-}
-.fade-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-// ===== VALIDATION FORMULAIRE =====
-const form = document.getElementById('contact-form');
-const nom = document.getElementById('nom');
-const prenom = document.getElementById('prenom');
-const email = document.getElementById('email');
-const sujet = document.getElementById('sujet');
-const message = document.getElementById('message');
-const successMsg = document.getElementById('success-message');
-
-// Fonction d'affichage d'erreur (définie avant utilisation)
-function showError(input, msg) {
-    input.classList.add('is-invalid');
-    const errorEl = document.getElementById(input.id + '-error');
-    if (errorEl) errorEl.textContent = msg;
-}
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let isValid = true;
-
-    // Réinitialisation des messages et des classes (inclut form-select)
-    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-    document.querySelectorAll('.form-control, .form-select')
-        .forEach(el => el.classList.remove('is-invalid', 'is-valid'));
-    successMsg.style.display = 'none'; // cacher le message de succès précédent
-
-    // Validation Nom
-    if (!nom.value.trim()) {
-        showError(nom, 'Le nom est requis.');
-        isValid = false;
-    } else {
-        nom.classList.add('is-valid');
-    }
-
-    // Validation Prénom
-    if (!prenom.value.trim()) {
-        showError(prenom, 'Le prénom est requis.');
-        isValid = false;
-    } else {
-        prenom.classList.add('is-valid');
-    }
-
-    // Validation Email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value.trim() || !emailRegex.test(email.value)) {
-        showError(email, 'Veuillez entrer un email valide.');
-        isValid = false;
-    } else {
-        email.classList.add('is-valid');
-    }
-
-    // Validation Sujet
-    if (!sujet.value) {
-        showError(sujet, 'Veuillez sélectionner un sujet.');
-        isValid = false;
-    } else {
-        sujet.classList.add('is-valid');
-    }
-
-    // Validation Message (min 20 caractères)
-    if (message.value.trim().length < 20) {
-        showError(message, 'Le message doit contenir au moins 20 caractères.');
-        isValid = false;
-    } else {
-        message.classList.add('is-valid');
-    }
-
-    if (isValid) {
-        successMsg.style.display = 'block';
-        form.reset();
-        // Retirer les classes de validation après réinitialisation
-        document.querySelectorAll('.form-control, .form-select')
-            .forEach(el => el.classList.remove('is-valid'));
-        // (Optionnel) masquer après 5 secondes
-        setTimeout(() => {
-            successMsg.style.display = 'none';
-        }, 5000);
-    }
-});

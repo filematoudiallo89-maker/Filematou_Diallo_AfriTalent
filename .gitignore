@@ -1,11 +1,23 @@
 # Fichiers système
 .DS_Store
 Thumbs.db
-
-# Dossiers d'édition
-.vscode/
-.idea/
-
-# Fichiers temporaires
 *.tmp
 *.log
+
+# Environnements de développement
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers de build / dépendances (si utilisés)
+node_modules/
+dist/
+build/
+
+# Fichiers de configuration locaux
+.env
+.env.local
+
+# Dossiers sensibles
+screenshots/   (à conserver uniquement pour le README)

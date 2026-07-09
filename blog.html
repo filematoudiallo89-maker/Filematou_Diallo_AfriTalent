@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent - Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Feuille de style personnalisée -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AfriTalent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-outline-secondary me-2" aria-label="Changer de thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#" class="btn btn-primary">Rejoindre AfriTalent</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN ===== -->
+    <main class="container py-5">
+        <div class="row">
+            <!-- Contenu principal -->
+            <div class="col-lg-8">
+                <h1 class="mb-4">Blog AfriTalent</h1>
+                <p class="lead">Retrouvez ici nos articles sur le freelance, la tech et l'innovation en Afrique.</p>
+
+                <!-- Article 1 -->
+                <article class="fade-section mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&crop=center"
+                             class="card-img-top" alt="Développeur travaillant sur un ordinateur">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between text-muted small">
+                                <span><i class="far fa-calendar-alt me-1"></i>15 mai 2026</span>
+                                <span><i class="far fa-user me-1"></i>Par Aminata Diouf</span>
+                            </div>
+                            <h2 class="card-title h4 mt-2">Comment trouver sa première mission freelance en Afrique</h2>
+                            <p class="card-text">Découvrez les stratégies efficaces pour décrocher vos premières missions, construire votre portfolio et vous faire connaître dans l'écosystème tech africain.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire la suite <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="fade-section mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop&crop=center"
+                             class="card-img-top" alt="Équipe en réunion autour d'une table">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between text-muted small">
+                                <span><i class="far fa-calendar-alt me-1"></i>2 mai 2026</span>
+                                <span><i class="far fa-user me-1"></i>Par Cheikh Fall</span>
+                            </div>
+                            <h2 class="card-title h4 mt-2">Les compétences tech les plus recherchées en 2026</h2>
+                            <p class="card-text">Développement web, IA, cloud, cybersécurité... Quelles sont les compétences qui font la différence sur le marché du travail en Afrique ? Analyse et tendances.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire la suite <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="fade-section mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop&crop=center"
+                             class="card-img-top" alt="Groupe de professionnels souriants">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between text-muted small">
+                                <span><i class="far fa-calendar-alt me-1"></i>18 avril 2026</span>
+                                <span><i class="far fa-user me-1"></i>Par Fatou Ndiaye</span>
+                            </div>
+                            <h2 class="card-title h4 mt-2">Freelancing vs CDI : quel statut choisir en 2026 ?</h2>
+                            <p class="card-text">Comparaison des avantages et inconvénients des deux statuts pour les professionnels de la tech. Témoignages de freelances et d'employés.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire la suite <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="fade-section mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=400&fit=crop&crop=center"
+                             class="card-img-top" alt="Femme d'affaires utilisant une tablette">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between text-muted small">
+                                <span><i class="far fa-calendar-alt me-1"></i>3 avril 2026</span>
+                                <span><i class="far fa-user me-1"></i>Par Mamadou Sy</span>
+                            </div>
+                            <h2 class="card-title h4 mt-2">5 outils indispensables pour gérer son activité freelance</h2>
+                            <p class="card-text">Gestion de projet, facturation, communication, veille technologique... Les outils qui vous feront gagner du temps et vous aideront à professionnaliser votre activité.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire la suite <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pagination Bootstrap -->
+                <nav aria-label="Pagination des articles">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><span class="page-link" tabindex="-1" aria-disabled="true">Précédent</span></li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <!-- Catégories -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Catégories</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="d-block py-1 text-primary">Freelance (12)</a></li>
+                                <li><a href="#" class="d-block py-1 text-primary">Tech (8)</a></li>
+                                <li><a href="#" class="d-block py-1 text-primary">Entrepreneuriat (5)</a></li>
+                                <li><a href="#" class="d-block py-1 text-primary">Tendances (4)</a></li>
+                                <li><a href="#" class="d-block py-1 text-primary">Conseils (7)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Articles récents -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Articles récents</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-primary">Comment trouver sa première mission freelance en Afrique</a></li>
+                                <li class="mb-2"><a href="#" class="text-primary">Les compétences tech les plus recherchées en 2026</a></li>
+                                <li class="mb-2"><a href="#" class="text-primary">Freelancing vs CDI : quel statut choisir ?</a></li>
+                                <li><a href="#" class="text-primary">5 outils indispensables pour gérer son activité freelance</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="card border-0 shadow-sm bg-light">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Newsletter</h3>
+                            <p class="small">Recevez nos derniers articles et conseils directement dans votre boîte mail.</p>
+                            <form>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Votre email" aria-label="Adresse email">
+                                    <button class="btn btn-primary" type="button">S'abonner</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>AfriTalent</h3>
+                    <p>La plateforme de mise en relation entre freelances tech et entreprises en Afrique.</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Liens utiles</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">Accueil</a></li>
+                        <li><a href="freelances.html" class="text-white-50">Freelances</a></li>
+                        <li><a href="tarifs.html" class="text-white-50">Tarifs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Ressources</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="blog.html" class="text-white-50">Blog</a></li>
+                        <li><a href="#" class="text-white-50">FAQ</a></li>
+                        <li><a href="#" class="text-white-50">Centre d'aide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Contact</h3>
+                    <address class="text-white-50">
+                        <i class="fas fa-envelope me-2"></i>contact@afritalent.com<br>
+                        <i class="fas fa-phone me-2"></i>+221 77 123 45 67<br>
+                        <i class="fas fa-map-marker-alt me-2"></i>Dakar, Sénégal
+                    </address>
+                    <div>
+                        <a href="#" class="text-white-50 me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white-50 me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white-50 me-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white-50" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-3 text-white-50" id="copyright">&copy; 2026 AfriTalent. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ===== BOUTON RETOUR EN HAUT ===== -->
+    <button id="back-to-top" class="btn btn-primary" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
